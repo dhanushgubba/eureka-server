@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/dhanushgubba/eureka-server.git'
+                git branch: 'main', url: 'https://github.com/dhanushgubba/eurekaserver.git'
             }
         }
 
