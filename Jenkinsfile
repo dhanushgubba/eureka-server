@@ -53,7 +53,7 @@ pipeline {
                     docker pull dhanushgubba/eureka-server:latest &&
                     docker stop eureka-server || true &&
                     docker rm eureka-server || true &&
-                    docker run -d -p 8761:8761 --name cart-service dhanushgubba/eureka-server:latest
+                    docker run -d -p 8761:8761 --name eureka-server dhanushgubba/eureka-server:latest
                 	'
            		 	"""
         		}
