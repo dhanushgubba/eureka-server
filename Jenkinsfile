@@ -44,5 +44,19 @@ pipeline {
                 }
             }
         }
+        stage('Deploy to EC2') {
+			steps {
+				sshagent(['ec2-ssh-key']) {
+					sh """
+					ssh -o StrictHostKeyChecking=no ubuntu@43.204.22.237 '
+                    docker pull dhanushgubba/eureka-server:latest &&
+                    docker stop eureka-server || true &&
+                    docker rm eureka-server || true &&
+                    docker run -d -p 8761:8761 --name cart-service dhanushgubba/eureka-server:latest
+                	'
+           		 	"""
+        		}
+    		}
+		}
     }
 }
