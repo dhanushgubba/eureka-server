@@ -49,7 +49,7 @@ pipeline {
 			steps {
 				sshagent(['ec2-ssh-key']) {
 					sh """
-					ssh -o StrictHostKeyChecking=no ubuntu@43.204.22.237 '
+					ssh -o StrictHostKeyChecking=no ubuntu@13.235.16.65 '
                     docker pull dhanushgubba/eureka-server:latest &&
                     docker stop eureka-server || true &&
                     docker rm eureka-server || true &&
